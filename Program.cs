@@ -7,7 +7,7 @@ namespace YoutubeDownloader
     {
         static void Main(string[] args)
         {
-            string path = @"C:\Users\cavva\OneDrive\Рабочий стол";
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             bool isWorking = true;
             User user = new User();
             VideoManager videoManager = new VideoManager();
@@ -18,14 +18,14 @@ namespace YoutubeDownloader
 
                 if (userInput == "DELETE")
                 {
-                    videoManager.Delete(path);
+                    videoManager.Delete(desktopPath);
                 }
                 else
                 {
                     user.SetAction(new DownloadCommand(videoManager));
                     videoManager.ShowInfo(userInput);
                     Thread.Sleep(1000);
-                    videoManager.Download(userInput, path);
+                    videoManager.Download(userInput, desktopPath);
                     Thread.Sleep(1000);
                     Console.WriteLine();
                 }

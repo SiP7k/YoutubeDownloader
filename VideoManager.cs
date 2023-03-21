@@ -23,7 +23,7 @@ namespace YoutubeDownloader
         {
             Console.WriteLine("Введите название файла без его расширения");
             string fileName = Console.ReadLine();
-            File.Delete(path + @"\" + fileName + ".mpeg");
+            File.Delete(path + @"\\" + fileName + ".mpeg");
             Console.WriteLine("Видео удалено");
         }
 
@@ -31,7 +31,7 @@ namespace YoutubeDownloader
         {
             var videoInfo = await _client.Videos.GetAsync(url);
             string fileName = videoInfo.Title + ".mpeg";
-            string outputFilePath = path + @"\" + fileName;
+            string outputFilePath = path + @"\\" + fileName;
 
             if (Directory.GetFiles(path).Contains(outputFilePath))
             {

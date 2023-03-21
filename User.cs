@@ -24,7 +24,6 @@ namespace YoutubeDownloader
         }
         public string TakeInput()
         {
-            Console.WriteLine("Введите ссылку на видео для скачивания или команду DELETE для удаления файла");
             string userInput = Console.ReadLine();
 
             if(userInput.StartsWith("https://") || userInput == "DELETE")

@@ -12,23 +12,20 @@ namespace YoutubeDownloader
             User user = new User();
             VideoManager videoManager = new VideoManager();
 
-            while(isWorking)
-            {
-                string userInput = user.TakeInput();
+            Console.WriteLine("Введите ссылку на видео для скачивания или команду DELETE для удаления файла");
+            string userInput = user.TakeInput();
 
-                if (userInput == "DELETE")
-                {
-                    videoManager.Delete(desktopPath);
-                }
-                else
-                {
-                    user.SetAction(new DownloadCommand(videoManager));
-                    videoManager.ShowInfo(userInput);
-                    Thread.Sleep(1000);
-                    videoManager.Download(userInput, desktopPath);
-                    Thread.Sleep(1000);
-                    Console.WriteLine();
-                }
+            if (userInput == "DELETE")
+            {
+                videoManager.Delete(desktopPath);
+            }
+            else
+            {
+                user.SetAction(new DownloadCommand(videoManager));
+                videoManager.ShowInfo(userInput);
+                Thread.Sleep(1000);
+                videoManager.Download(userInput, desktopPath);
+                Thread.Sleep(1000000);
             }
         }
     }

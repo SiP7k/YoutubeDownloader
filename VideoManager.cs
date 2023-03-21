@@ -53,9 +53,7 @@ namespace YoutubeDownloader
                         break;
                 }
             }
-            
             Console.WriteLine("Видео загружено\n");
-
         }
         public async void ShowInfo(string url)
         {

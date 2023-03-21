@@ -8,7 +8,6 @@ namespace YoutubeDownloader
         static void Main(string[] args)
         {
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            bool isWorking = true;
             User user = new User();
             VideoManager videoManager = new VideoManager();
 
